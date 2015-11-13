@@ -1,0 +1,10 @@
+body {
+	width: 980px;
+}
+
+
+article>select {
+	float: right;
+	width: 200px;
+	height: 100px;
+}

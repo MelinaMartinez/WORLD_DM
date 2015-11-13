@@ -5,6 +5,7 @@ $dsn = 'mysql:host=localhost;dbname=world;charset=utf8';
 $pdo = new PDO($dsn, 'world', '');
 	
 REQUIRE 'function.php';
+
 ?>
 
 <!DOCTYPE html>
@@ -13,7 +14,7 @@ REQUIRE 'function.php';
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title></title>
-	<link rel="stylesheet" href="">
+	<link rel="stylesheet" href="../WORLD_DM/style.css">
 </head>
 <body>
 
@@ -64,19 +65,41 @@ REQUIRE 'function.php';
 
 	<article>
 		<!-- partie PAYS-->
-		<select name="" multiple>
-			<option value=""></option>
+		<select name="PAYS" multiple>
+			
+
+			<?php 
+			
+
+			$rowcountry = getcountry($pdo);
+			
+			foreach($rowcountry AS $currentcountry) {
+
+				echo  '<option value="' . $currentcountry['Name'] .'">'.$currentcountry['Name'] .'</option>';
+				
+				
+			}
+			?>
+			
+		<!-- rien -->
+			
 		</select>
 
 
-		<h2></h2>
+		<h2>Démographie</h2>
 
-		<p></p>
+		<p>Capitale :</p>
+		<p>Ville la plus habité :</p>
+		<p>Nombres de ville enregistrées :</p>
+		<p>Langue Officielle :</p>
+		<p>Autres langues parlées :</p>
+		<p>Langues A (%) :</p>
+		<p>Langues B (%) :</p>
 
 
-		<h2></h2>
+		<h2>Economie</h2>
 
-		<p></p>
+		<p>PNB: M$</p>
 	</article>
 
 

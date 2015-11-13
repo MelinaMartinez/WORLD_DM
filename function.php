@@ -1,5 +1,6 @@
 <?php
 
+
 function getContinentByName($pdo) {
 
 	$sql1 ='SELECT DISTINCT Continent FROM country;'; 
@@ -9,4 +10,9 @@ function getContinentByName($pdo) {
 
 }
 
-?>
+function getcountry($pdo) {
+	$sql= 'SELECT DISTINCT Name FROM country;';
+			$country = $pdo->query($sql); 
+			$rowcountry = $country->fetchAll(PDO::FETCH_ASSOC);
+			return $rowcountry;
+}
