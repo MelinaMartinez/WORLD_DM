@@ -1,3 +1,11 @@
+<?php
+
+
+$dsn = 'mysql:host=localhost;dbname=world;charset=utf8';
+$pdo = new PDO($dsn, 'world', '');
+	
+REQUIRE 'function.php';
+?>
 
 <!DOCTYPE html>
 <html>
@@ -20,18 +28,38 @@
 	<article>
 		<!-- partie Continent-->
 		<select name="" multiple>
-			<option value=""></option>
+							
+			<?php 
+			
+			$rowContinent= getContinentByName($pdo);
+
+			foreach($rowContinent AS $currentContinent)
+			{
+				echo '<option value="'.$currentContinent['Continent'].'">'.$currentContinent['Continent'].'</option>';
+			}
+			?>
+
+
+		
 		</select>
 
 
-		<h2></h2>
+		<h2>Démographie</h2>
 
-		<p></p>
+		<p>Nombre de pays : </p>
+		<p>Population : </p>
+		<p>Surface totale : </p>
+		<p>Pays le plus habité : </p>
+		<p>Pays ayant la plus grande espérance de vie : </p>
+		<p>Espérance de vie moyenne : </p>
 
 
-		<h2></h2>
+		<h2>Economie</h2>
 
-		<p></p>
+		<p>Richesse créée : M$</p>
+
+
+
 	</article>
 
 	<article>
